@@ -3,14 +3,14 @@ package Model;
 public class UserGroup {
 
     private int id;
-    private String description;
+    private String name;
 
     public UserGroup() {
     }
 
     public UserGroup(int id, String description) {
         this.id = id;
-        this.description = description;
+        this.name = name;
     }
 
     public int getId() {
@@ -21,11 +21,11 @@ public class UserGroup {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
     }
 }
