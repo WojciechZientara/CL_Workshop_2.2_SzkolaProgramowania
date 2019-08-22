@@ -26,6 +26,9 @@ public class UserDao {
     private static final String FIND_ALL_USER_QUERY =
             "SELECT * FROM users";
 
+    private static final String FIND_ALL_BY_GROUP_QUERY =
+            "SELECT * FROM users WHERE groupId = ?";
+
     public User create(User user) {
         try (Connection connection = Db.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(CREATE_USER_QUERY, Statement.RETURN_GENERATED_KEYS);
@@ -117,6 +120,26 @@ public class UserDao {
         try (Connection connection = Db.getConnection()) {
             User[] users = new User[0];
             PreparedStatement statement = connection.prepareStatement(FIND_ALL_USER_QUERY);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                User user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setUsername(resultSet.getString("username"));
+                user.setEmail(resultSet.getString("email"));
+                user.setPassword(resultSet.getString("password"));
+                users = addToArray(user, users);
+            }
+            return users;
+        } catch (SQLException e) {
+            e.printStackTrace(); return null;
+        }
+    }
+
+    public User[] findAllByGroupId(int groupId) {
+        try (Connection connection = Db.getConnection()) {
+            User[] users = new User[0];
+            PreparedStatement statement = connection.prepareStatement(FIND_ALL_BY_GROUP_QUERY);
+            statement.setInt(1, groupId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 User user = new User();

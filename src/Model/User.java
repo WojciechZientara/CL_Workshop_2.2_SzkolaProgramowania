@@ -8,6 +8,7 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private int groupId;
 
     public User() {
     }
@@ -23,6 +24,14 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = BCrypt.hashpw(password,BCrypt.gensalt());
+    }
+
+    public User(int id, String username, String email, String password, int groupId) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = BCrypt.hashpw(password,BCrypt.gensalt());
+        this.groupId = groupId;
     }
 
     public int getId() {
@@ -55,5 +64,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
+    }
+
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
     }
 }

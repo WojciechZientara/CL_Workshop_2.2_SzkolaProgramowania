@@ -23,6 +23,7 @@ public class Solution {
         this.users_id = users_id;
     }
 
+
     public int getId() {
         return id;
     }
