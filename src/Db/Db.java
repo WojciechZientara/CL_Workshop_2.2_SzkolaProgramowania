@@ -11,7 +11,6 @@ public class Db {
     final static String PASSWORD = "coderslab";
 
     public static Connection getConnection() throws SQLException {
-        System.out.println("ddd");
             return DriverManager.getConnection(DATABASE, USER, PASSWORD);
     }
 
