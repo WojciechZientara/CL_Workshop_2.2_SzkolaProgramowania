@@ -33,8 +33,8 @@ public class UsersAdmin {
             } else  if (choice.equals("quit")){
                 System.out.println("Zamykanie programu");
                 System.exit(0);
-            } else {System.out.println("wybrano add");
-                System.out.println("wybranAdminUserso niepoprawny wariant");
+            } else {
+                System.out.println("wybrano niepoprawny wariant");
             }
         }
     }

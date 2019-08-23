@@ -16,7 +16,7 @@ public class ExerciseDao {
             "SELECT * FROM exercise WHERE id = ?";
 
     private static final String UPDATE_EXERCISE_QUERY =
-            "UPDATE exercise SET title = ?, description = ?, where id = ?";
+            "UPDATE exercise SET title = ?, description = ? WHERE id = ?";
 
     private static final String DELETE_EXERCISE_QUERY =
             "DELETE FROM exercise WHERE id = ?";
