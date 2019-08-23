@@ -81,6 +81,7 @@ public class SolutionDao {
             statement.setString(3, solution.getDescription());
             statement.setInt(4, solution.getExercise_id());
             statement.setInt(5, solution.getUsers_id());
+            statement.setInt(6, solution.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

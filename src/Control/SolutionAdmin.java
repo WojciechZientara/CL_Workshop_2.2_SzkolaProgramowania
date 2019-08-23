@@ -55,7 +55,7 @@ public class SolutionAdmin {
         int userId = chooseUser();
         SolutionDao solutionDao = new SolutionDao();
         Solution[] usersSolutions = solutionDao.findAllByUserId(userId);
-        System.out.println("Id zadania : data przypisania");
+        System.out.println("Id zadania : data utworzenia");
         for (Solution solution : usersSolutions) {
             System.out.println(solution.getExercise_id() + " : " + solution.getCreated());
         }
