@@ -1,6 +1,6 @@
-# szkola_programowania
+# Programming school
 
-Prosta aplikacja konsolowa<br><br>
+A simple console application<br><br>
 
 DAO<br>
 MySQL DB
